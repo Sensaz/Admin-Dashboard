@@ -24,10 +24,13 @@ import {
   Line,
 } from "./pages";
 
+import { useStateContext } from "./contexts/ContextProvider";
+
 import "./App.css";
 
 const App = () => {
-  const activeMenu = true;
+  const { activeMenu } = useStateContext();
+  // const activeMenu = true;
   return (
     <div>
       <BrowserRouter>
@@ -53,11 +56,13 @@ const App = () => {
             </div>
           )}
           <div
-            className={`dark:bg-main-bg bg-main-bg min-h-screen w-full ${
-              activeMenu ? "md:ml-72" : " flex-2"
-            }`}
+            className={
+              activeMenu
+                ? "dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-72 w-full  "
+                : "bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 "
+            }
           >
-            <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
+            <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
               <Navbar />
             </div>
           </div>
@@ -65,7 +70,7 @@ const App = () => {
             <Routes>
               {/* Dashboard */}
               <Route path="/" element={<Ecommerce />} />
-              <Route path="/ecomerce" element={<Ecommerce />} />
+              <Route path="/ecommerce" element={<Ecommerce />} />
               {/* Pages */}
               <Route path="/orders" element={<Orders />} />
               <Route path="/employees" element={<Employees />} />
