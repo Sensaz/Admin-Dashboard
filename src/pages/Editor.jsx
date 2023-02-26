@@ -1,9 +1,7 @@
 import React from "react";
 import {
   HtmlEditor,
-  Image,
   Inject,
-  Link,
   QuickToolbar,
   RichTextEditorComponent,
   Toolbar,
