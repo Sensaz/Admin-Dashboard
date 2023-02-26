@@ -2,7 +2,6 @@ import React from "react";
 import {
   ChartComponent,
   SeriesCollectionDirective,
-  Seresdirective,
   Inject,
   LineSeries,
   DateTime,
