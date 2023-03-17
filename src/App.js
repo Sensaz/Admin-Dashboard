@@ -87,6 +87,10 @@ const App = () => {
               <Routes>
                 {/* dashboard  */}
                 <Route path="/" element={<Navigate to="ecommerce" replace />} />
+                <Route
+                  path="/Admin-Dashboard"
+                  element={<Navigate to="ecommerce" replace />}
+                />
                 <Route path="/ecommerce" element={<Ecommerce />} />
 
                 {/* pages  */}
